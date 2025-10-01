@@ -1,0 +1,88 @@
+/**
+ * HelpButton CSS Styles
+ * 
+ * Responsive styling for the floating help button component.
+ * Includes hover effects, mobile optimizations, and accessibility features.
+ */
+
+.help-button-floating {
+  /* Base positioning and appearance */
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 1050 !important;
+  
+  /* Button styling */
+  border-radius: 50px !important;
+  padding: 12px 20px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  min-width: auto !important;
+  white-space: nowrap !important;
+  
+  /* Shadow and transitions */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.3s ease !important;
+  
+  /* Ensure button stays above other content */
+  backdrop-filter: blur(10px);
+}
+
+.help-button-floating:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+.help-button-floating:active {
+  transform: translateY(0) !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .help-button-floating {
+    bottom: 15px !important;
+    right: 15px !important;
+    padding: 10px 16px !important;
+    font-size: 13px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .help-button-floating {
+    bottom: 10px !important;
+    right: 10px !important;
+    padding: 8px 14px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .help-button-floating {
+    border: 2px solid currentColor !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .help-button-floating {
+    transition: none !important;
+  }
+  
+  .help-button-floating:hover {
+    transform: none !important;
+  }
+}
+
+/* Focus styles for accessibility */
+.help-button-floating:focus {
+  outline: 2px solid #007bff !important;
+  outline-offset: 2px !important;
+}
+
+/* Ensure button doesn't interfere with scrollbars */
+@media (max-width: 1024px) {
+  .help-button-floating {
+    right: 15px !important;
+  }
+}
